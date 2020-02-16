@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
 
-  <script>
-  let options = ['rock','paper','scissors'];
-  let randNum = Math.floor(Math.random() * 3);
-  
-  function computerSelect () {
-	return options[randNum];
-}
+  <head></head>
 
+  <body>
 
+    <script>
+      function playRound(playerSelection, computerSelection) {
+        // your code here!
 
-  
-  
-  let printPlayerSelection = document.createElement('p');
+        if (playerSelection == computerSelection) {
+          return "It's a tie!";
+        } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
+        playerSelection == 'paper' && computerSelection == 'scissors' || 
+        playerSelection == 'scissors' && computerSelection == 'rock') {
+        return "Computer wins!"
+        }
+        return "Player wins!";
+      }
 
-  </script>
-</body>
+      const playerSelection = 'rock'
+      const computerSelection = function() {
+        let options = ['rock', 'paper', 'scissors'];
+        let randNum = Math.floor(Math.random() * 3);
+        return options[randNum];
+      }
+      console.log(playRound(playerSelection, computerSelection))
+
+    </script>
+  </body>
+
 </html>
